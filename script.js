@@ -200,10 +200,12 @@ let mode = pick(["daisies", "multi", "quad", "roses", "crosshatch", "blueYellow"
     let colorOpt = colorz[mode]
     let colors =  getThemeColors(colorOpt) /*pistil color at index 0, petal color at index 1*/
    
+
+   //body.addEventListener('touchend',() => console.log('touch called'));
   
   /*Initialize flowers*/
-  body.addEventListener("click", function(ev){
-
+  body.addEventListener("click" ,function(ev){
+    //console.log('touch called');
 //TODO
 //цвет фона задавать только при открытии страницы
 //определить моды: одинаковые цвета, разные ()
