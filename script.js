@@ -202,7 +202,7 @@ let mode = pick(["daisies", "multi", "quad", "roses", "crosshatch", "blueYellow"
    
   
   /*Initialize flowers*/
-  body.addEventListener("click" ,function(ev){
+  body.addEventListener("click",function(ev){
 
 //TODO
 //цвет фона задавать только при открытии страницы
@@ -452,8 +452,9 @@ function scaleCanvas(){
   //var width = Math.max(window.screen.width, window.innerWidth);
   //корректное вычисление ширины на мобилках(поправить на деске)
   var width = (window.screen.width / window.devicePixelRatio - window.screenTop)*2
-  //console.log(`width:${width}`)
 
+
+  console.log(`width:${width}`)
   console.log(`width:${w},height:${h}`)
   canvas.style.width = w + "px";
   canvas.style.height = h + "px";
