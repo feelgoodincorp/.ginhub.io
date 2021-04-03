@@ -202,7 +202,7 @@ let mode = pick(["daisies", "multi", "quad", "roses", "crosshatch", "blueYellow"
    
   
   /*Initialize flowers*/
-  body.addEventListener("touchstart",function(ev){
+  body.addEventListener("click", function(ev){
 
 //TODO
 //цвет фона задавать только при открытии страницы
