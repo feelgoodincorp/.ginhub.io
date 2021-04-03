@@ -187,20 +187,13 @@ let mode = pick(["daisies", "multi", "quad", "roses", "crosshatch", "blueYellow"
     if(mode=="daisies") bg.l = getRandomInt(0,50)
     canvas.style.backgroundColor = bg.hsl()
 
-//     var colorz = {
-//     "daisies":{h2:35,s2:83,l2:85,h:45,s:92,l:52,vary:20,mix:false},
-//     "roses":{h:1,s:91,l:46,h2:1,s2:91,l2:30,vary:20,mix:true},
-//     "crosshatch":{h:1,s:91,l:46,vary:80,mix:true},/*only defines one varying pistil color*/
-//     "greenRed":{h:102,s:72,l:27,h2:348,s2:89,l2:42,vary:20,mix:false},
-//     "blueYellow":{h:45,s:99,l:50,h2:240,s2:67,l2:58,vary:10,mix:false},
-//     }
-       var colorz = {
-       "daisies":{h2:35,s2:83,l2:85,h:45,s:92,l:52,vary:20,mix:false},
-       "roses":{h:1,s:91,l:46,h2:1,s2:91,l2:30,vary:20,mix:true},
-       "crosshatch":{h:1,s:91,l:46,vary:80,mix:true},/*only defines one varying pistil color*/
-       "greenRed":{h:102,s:72,l:27,h2:348,s2:89,l2:42,vary:20,mix:false},
-       "blueYellow":{h:45,s:99,l:50,h2:240,s2:67,l2:58,vary:10,mix:false},
-       }
+    var colorz = {
+    "daisies":{h2:35,s2:83,l2:85,h:45,s:92,l:52,vary:20,mix:false},
+    "roses":{h:1,s:91,l:46,h2:1,s2:91,l2:30,vary:20,mix:true},
+    "crosshatch":{h:1,s:91,l:46,vary:80,mix:true},/*only defines one varying pistil color*/
+    "greenRed":{h:102,s:72,l:27,h2:348,s2:89,l2:42,vary:20,mix:false},
+    "blueYellow":{h:45,s:99,l:50,h2:240,s2:67,l2:58,vary:10,mix:false},
+    }
 
 
 //assign colors
@@ -209,7 +202,7 @@ let mode = pick(["daisies", "multi", "quad", "roses", "crosshatch", "blueYellow"
    
   
   /*Initialize flowers*/
-  body.addEventListener("click",function(ev){
+  body.addEventListener("click", "touchend" ,function(ev){
 
 //TODO
 //цвет фона задавать только при открытии страницы
@@ -456,6 +449,11 @@ let mode = pick(["daisies", "multi", "quad", "roses", "crosshatch", "blueYellow"
 function scaleCanvas(){
   var w = Math.max(document.documentElement.clientWidth, window.innerWidth);
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  //var width = Math.max(window.screen.width, window.innerWidth);
+  //корректное вычисление ширины на мобилках(поправить на деске)
+  var width = (window.screen.width / window.devicePixelRatio - window.screenTop)*2
+  //console.log(`width:${width}`)
+
   console.log(`width:${w},height:${h}`)
   canvas.style.width = w + "px";
   canvas.style.height = h + "px";
@@ -492,4 +490,4 @@ function Point(x,y) {
   this.x = x
   this.y = y
 }
-})("sweaverD.com");
+})("");
