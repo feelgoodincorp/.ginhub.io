@@ -5,8 +5,17 @@
 <!-- <script src="script.js" defer></script> -->
 </head>
 
-<body onload="loadedContent();">
-
+<body>
+	<style>
+            /* fix for opera's user agent default  styles */
+            html body{
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: 0;
+            }
+            </style>
 <canvas id="canvas"></canvas>
 <script src="script.js"></script>
 
